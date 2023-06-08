@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Rating from './Rating';
+import SearchBar from './SearchBar';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -25,6 +26,9 @@ const RecipeList = () => {
   return (
     <div className="recipe-list">
       <h1 className="recipe-list-title">Recipes</h1>
+      <div className="search-bar">
+      <SearchBar/>
+      </div>
       {recipes.map((recipe) => (
         <div key={recipe.id} className="recipe-item">
         <ul className="recipe-title">{recipe.title}🍲</ul>
