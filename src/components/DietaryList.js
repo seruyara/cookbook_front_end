@@ -9,7 +9,7 @@ const DietaryList = () => {
 
   const fetchDietaries = async () => {
     try {
-      const response = await fetch('/dietaries');
+      const response = await fetch('http://localhost:9292/dietaries');
       if (response.ok) {
         const data = await response.json();
         setDietaries(data);
@@ -26,7 +26,7 @@ const DietaryList = () => {
       <h2>Dietaries</h2>
       {dietaries.map((dietary) => (
         <div key={dietary.id}>
-          <h3>{dietary.name}</h3>
+          <h3>{dietary.preference}</h3>
           {/* Render additional dietary details */}
         </div>
       ))}

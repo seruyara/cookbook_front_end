@@ -4,26 +4,43 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(208, 157, 148);
+  background-color: rgb(251, 251, 250);
   margin: 0;
   padding: 0;
 }
+
+/* homepage */
+
+.image-container {
+  height: 570px; /* Adjust the desired height for the image container */
+  width: 11800px; /* Adjust the desired width for the image container */
+  position: relative;
+}
+
+.homepage-image {
+  max-width: 2005px;
+  max-height: 960px;
+}
+
+
+
+/* recipelist */
 
 .recipe-list {
   padding: 20px;
 }
 
 .recipe-list-title {
-  color: rgb(29, 78, 88);
+  color: #000;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
 .recipe-item {
   margin-bottom: 20px;
-  border: 1px solid #cccccc;
+  border: 1px solid #fff;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -31,12 +48,12 @@ body {
 .recipe-title {
   font-weight: bold;
   font-size: 24px;
-  color: rgb(158, 190, 218);
+  color: gold;
   margin-bottom: 10px;
 }
 
 .recipe-instructions {
-  color: rgb(227, 155, 186);
+  color: #000;
   line-height: 1.5;
 }
 
@@ -51,8 +68,11 @@ body {
 }
 
 .star.filled {
-  color: rgb(238, 238, 29);
+  color: gold;
 }
+
+ 
+/* search */
 
 .search-bar {
   display: flex;
@@ -83,23 +103,8 @@ body {
 .search-button:hover {
   background-color: #333;
 }
-.navbar {
-  background-color: #000;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
 
-.navbar-logo {
-  font-size: 24px;
-}
-
-.navbar-menu {
-  list-style: none;
-  display: flex;
-}
+/* navbar */
 
 .navbar-item {
   margin-right: 10px;
@@ -109,6 +114,23 @@ body {
   color: #fff;
   text-decoration: none;
 }
+
+.logo {
+  position: absolute;
+  left: 100px; /* Adjust the distance from the left edge as needed */
+  top: 20px; /* Adjust the distance from the top edge as needed */
+}
+
+.logo img {
+  width: 150px; /* Adjust the width as per your preference */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+
+/* homepage */
 
 .homepage-container {
   padding: 20px;
@@ -124,3 +146,98 @@ body {
   font-size: 16px;
   color: #666;
 }
+
+/* Navbar */
+.navbar {
+  background-color: #f4f2c0; 
+  padding: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-item {
+  display: inline;
+}
+
+.navbar-item a {
+  color: #000000;
+  position: relative;
+}
+
+.navbar-item a::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* Adjust the value to your desired distance below the text */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transition: background-color 0.3s;
+}
+
+.navbar-item a:hover::after,
+.navbar-item a.active::after {
+  height: 3px;
+  background-color:#000 ; /* Set the bottom line color */
+  transition: background-color 0.3s;
+}
+
+.navbar-item a:hover,
+.navbar-item a.active {
+  color: rgb(224, 191, 5); /* Set the text color to gold on hover and for the active link */
+}
+
+/* reviews */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid #ccc;
+  padding: 20px;
+  background-color: #050101;
+  color: #fcfbfb;
+}
+.review-form-container {
+  width: 100%;
+}
+.review-form-container h3 {
+  margin-top: 0;
+}
+.review-form-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+.review-form-container input,
+.review-form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: none;
+}
+.review-form-container button[type="submit"] {
+  display: block;
+  padding: 10px 20px;
+  background-color: gold;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.review-form-container button[type="submit"]:hover {
+  background-color: gold;
+  font-size: 1.1em;
+}
+
+
+
+
+

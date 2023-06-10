@@ -24,7 +24,7 @@ const RecipeList = () => {
   };
 
   return (
-    <div className="recipe-list">
+    <div className="recipe-list" id='recipe-list'>
       <h1 className="recipe-list-title">Recipes</h1>
       <div className="search-bar">
       <SearchBar/>
