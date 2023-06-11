@@ -25,10 +25,6 @@ function Reviews() {
             <input type="text" id="name" value={name} onChange={(event) => setName(event.target.value)} required />
           </div>
           <div>
-            <label htmlFor="rating">Rating:</label>
-            <input type="number" id="rating" min="1" max="5" value={rating} onChange={(event) => setRating(event.target.value)} required />
-          </div>
-          <div>
             <label htmlFor="comment">Comment:</label>
             <textarea id="comment" value={comment} onChange={(event) => setComment(event.target.value)} required />
           </div>
@@ -40,7 +36,6 @@ function Reviews() {
           reviews.map((review, index) => (
             <div key={index} className="review">
               <h3>{review.name}</h3>
-              <p>Rating: {review.rating}</p>
               <p>{review.comment}</p>
             </div>
           ))
