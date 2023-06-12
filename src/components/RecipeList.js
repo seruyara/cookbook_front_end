@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   useEffect(() => {
     fetchRecipes();
@@ -15,6 +16,7 @@ const RecipeList = () => {
       if (response.ok) {
         const data = await response.json();
         setRecipes(data);
+        setFilteredRecipes(data);
       } else {
         console.error('Failed to fetch recipes');
       }
@@ -31,6 +33,7 @@ const RecipeList = () => {
       if (response.ok) {
         // Remove the deleted recipe from the state
         setRecipes(recipes.filter(recipe => recipe.id !== id));
+        setFilteredRecipes(filteredRecipes.filter(recipe => recipe.id !== id));
       } else {
         console.error('Failed to delete recipe');
       }
@@ -39,13 +42,21 @@ const RecipeList = () => {
     }
   };
 
+  const handleSearch = (searchQuery) => {
+    const filtered = recipes.filter(recipe => {
+      // Match the recipe title with the search query
+      return recipe.title.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+    setFilteredRecipes(filtered);
+  };
+
   return (
     <div className="recipe-list" id='recipe-list'>
       <h1 className="recipe-list-title">Recipes</h1>
       <div className="search-bar">
-        <SearchBar/>
+        <SearchBar handleSearch={handleSearch} />
       </div>
-      {recipes.map((recipe) => (
+      {filteredRecipes.map((recipe) => (
         <div key={recipe.id} className="recipe-item">
           <ul className="recipe-title">{recipe.title}🍲</ul>
           <h3 className="recipe-instructions">{recipe.instructions}</h3>

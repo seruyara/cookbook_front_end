@@ -237,6 +237,36 @@ body {
   font-size: 1.1em;
 }
 
+/* Dietarie */
+
+.dietaries-heading {
+  color: white;
+  background: black;
+  padding: 10px;
+}
+
+.dietary-form {
+  background: black;
+  padding: 10px;
+}
+
+.dietary-input {
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.add-dietary-button {
+  padding: 5px;
+  background: gold;
+  color: black;
+  border: none;
+}
+
+.dietary-item {
+  color: white;
+  background: black;
+  padding: 10px;
+}
 
 
 

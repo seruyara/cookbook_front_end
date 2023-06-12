@@ -50,13 +50,20 @@ const DietaryList = () => {
 
   return (
     <div>
-      <h2>Dietaries</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={newDietary} onChange={handleInputChange} />
-        <button type="submit">Add Dietary</button>
+      <h2 className="dietaries-heading">Dietaries</h2>
+      <form onSubmit={handleSubmit} className="dietary-form">
+        <input
+          type="text"
+          value={newDietary}
+          onChange={handleInputChange}
+          className="dietary-input"
+        />
+        <button type="submit" className="add-dietary-button">
+          Add Dietary
+        </button>
       </form>
       {dietaries.map((dietary) => (
-        <div key={dietary.id}>
+        <div key={dietary.id} className="dietary-item">
           <h3>{dietary.preference}</h3>
           {/* Render additional dietary details */}
         </div>

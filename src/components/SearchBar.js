@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SearchBar(){
+function SearchBar({ handleSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Handle input change
@@ -11,7 +11,7 @@ function SearchBar(){
   // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform search or update parent component with search query
+    handleSearch(searchQuery);
   };
 
   return (
@@ -25,6 +25,6 @@ function SearchBar(){
       <button type="submit">Search</button>
     </form>
   );
-};
+}
 
 export default SearchBar;
