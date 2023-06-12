@@ -38,7 +38,7 @@ This cookbook project is typically a collection of recipes that are compiled and
 
 *****
 ## Live Link
-Or you can access the web application directly via this [LINK.](https://seruyara.github.io/Haru/)
+Or you can access the web application directly via this [LINK.](http://localhost:3000/HomePage)
 *****
 ## Dependencies
 Google fonts
